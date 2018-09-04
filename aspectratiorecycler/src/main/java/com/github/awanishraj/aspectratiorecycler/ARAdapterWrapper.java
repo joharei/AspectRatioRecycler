@@ -16,7 +16,7 @@
 
 package com.github.awanishraj.aspectratiorecycler;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
@@ -30,7 +30,7 @@ import java.util.List;
 public class ARAdapterWrapper extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private RecyclerView.Adapter mAdapter;
-    private List<? extends DimInterface> mDataset;
+    private ARAdapterInterface adapterInterface;
 
     /**
      * Constructor for the wrapper
@@ -38,7 +38,7 @@ public class ARAdapterWrapper extends RecyclerView.Adapter<RecyclerView.ViewHold
      * @param ARAdapterInterface
      */
     public ARAdapterWrapper(ARAdapterInterface ARAdapterInterface) {
-        this.mDataset = ARAdapterInterface.getDataset();
+        this.adapterInterface = ARAdapterInterface;
         this.mAdapter = ARAdapterInterface.getAdapter();
         this.mAdapter.registerAdapterDataObserver(new ARDatasetObserver(this));
     }
@@ -63,7 +63,7 @@ public class ARAdapterWrapper extends RecyclerView.Adapter<RecyclerView.ViewHold
      */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        holder.itemView.setLayoutParams(new ARLayoutParams(mDataset.get(position)));
+        holder.itemView.setLayoutParams(new ARLayoutParams(adapterInterface.getDataset().get(position)));
         this.mAdapter.onBindViewHolder(holder, position);
     }
 

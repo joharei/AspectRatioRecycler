@@ -22,9 +22,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:27.0.0'
-    implementation 'com.android.support:recyclerview-v7:27.0.0'
-    implementation 'com.android.support:design:27.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0-rc02'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-rc02'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
     implementation 'com.github.bumptech.glide:glide:3.6.1'
     implementation 'com.edmodo:rangebar:1.0.0'
     implementation project(':aspectratiorecycler')

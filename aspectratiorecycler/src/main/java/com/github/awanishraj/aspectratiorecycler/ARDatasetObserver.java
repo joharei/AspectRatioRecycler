@@ -16,7 +16,7 @@
 
 package com.github.awanishraj.aspectratiorecycler;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Awanish Raj on 12/10/15.

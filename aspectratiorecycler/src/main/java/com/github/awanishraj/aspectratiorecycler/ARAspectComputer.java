@@ -17,7 +17,7 @@
 package com.github.awanishraj.aspectratiorecycler;
 
 import android.app.Activity;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.DisplayMetrics;
 
 import java.util.ArrayList;
