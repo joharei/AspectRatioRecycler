@@ -16,9 +16,7 @@
 
 package com.github.awanishraj.aspectratiorecycler;
 
-import android.app.Activity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import android.util.DisplayMetrics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,19 +29,16 @@ public class ARAspectComputer {
 
     /**
      * Method that computes the SpanBucket for the given list of objects
-     * @param activity
      * @param objList
+     * @param totalWidth
      * @param ar_min
      * @param ar_max
      * @return
      */
-    public static synchronized SpanBucket computeAspects(Activity activity, final List<? extends DimInterface> objList, float ar_min, float ar_max) {
-        DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        final int W = dm.widthPixels;
+    public static synchronized SpanBucket computeAspects(final List<? extends DimInterface> objList, int totalWidth, float ar_min, float ar_max) {
         //Apply the dimensions based on thresholds
-        applyAspects(objList, W, ar_min, ar_max);
-        return new SpanBucket(objList, W);
+        applyAspects(objList, totalWidth, ar_min, ar_max);
+        return new SpanBucket(objList, totalWidth);
     }
 
     /**
